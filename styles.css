@@ -45,6 +45,16 @@ p {
     line-height: 1.5;
 }
 
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* .btn {
+    background-color: #6415ff;
+    padding: 12px 32px;
+} */
+
 /* nav */
 
 nav {
@@ -83,6 +93,25 @@ nav {
     padding-top: 4px;
     letter-spacing: 0.35px;
     margin: 0 24px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    transition: all 300ms;
+}
+
+.nav__link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    background: #6415ff;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
 }
 
 .nav__links {
@@ -105,6 +134,18 @@ nav {
     line-height: 1.5;
     border: none;
     width: auto;
+    transition: all 300ms ease;
+}
+
+.nav__link--primary:hover {
+    background-color: rgba(80, 17, 204);
+    color:white;
+}
+
+.nav__link--primary:after {
+content: "";
+width: 0;
+height: 0;
 }
 
 /* header */
@@ -141,12 +182,29 @@ header .row {
     width: 100%;
     padding: 20px 192px 20px 32px;
     border-radius: 500px;
+    border: 2px solid rgb(229, 231, 235);
     font-size: 16px;
     font-weight: 500;
     top: 0;
     bottom: 0;
     position: absolute;
     z-index: 1;
+    transition: border-color 300ms;
+}
+
+.header__email--input::placeholder {
+    font-weight: 500;
+    color: rgb(158, 170, 189)
+}
+
+.header__email--input:hover {
+    border-color: rgba(160, 174, 192)
+}
+
+.header__email--input:focus,
+.header__email--input:active {
+    outline: none;
+    border-color: rgba(100, 21, 255)
 }
 
 .header__email--btn {
@@ -160,6 +218,24 @@ header .row {
     font-weight: 700;
     font-size: 16px;
     z-index: 2;
+    transition: all 300ms ease;
+}
+
+.header__email--btn:hover {
+    background-color: rgba(60, 13, 153);
+}
+
+.header__customers--title {
+    margin-top: 80px;
+    color: #a0aec0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.header__customers {
+    margin-top: 16px;
+    padding-right: 128px;
+    opacity: 0.5;
 }
 
 .header__img--wrapper {
